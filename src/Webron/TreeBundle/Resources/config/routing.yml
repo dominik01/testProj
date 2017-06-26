@@ -1,0 +1,3 @@
+webron_tree_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: WebronTreeBundle:Default:index }

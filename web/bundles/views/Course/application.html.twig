@@ -1,0 +1,64 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+
+<div id="courseForm">
+    <section class="bannersmall"><h1>Novučičký kurz <strong>{{ data.courseName }}</strong></h1></section>
+    <section class="order-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12"><h2><span>Nezáväzná prihláška na</span>Kurz {{ data.courseName }}</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="small-circle-info"><i><img src="{{ asset('bundles/goodjob/images/icon_clock.svg')}}" alt="loc"></i>
+                        <div><span>Termín kurzu</span>
+                            <p>Začiatok: <strong>{{ data.courseStart | date('d.m.Y') }}</strong><br>Ukončenie: {{ data.courseEnd | date('d.m.Y') }}</p></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="small-circle-info"><i><img src="{{ asset('bundles/goodjob/images/icon_calendar.svg')}}" alt="loc"></i>
+                        <div><span>Konanie kurzu</span>
+                            <p>{{ data.courseDay }}<br><strong>{{ data.courseTime }}</strong></p></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="small-circle-info"><i><img src="{{ asset('bundles/goodjob/images/icon_euro.svg')}}" alt="loc"></i>
+                        <div><span>Cena kurzu</span>
+                            <p>za {{ data.coursePeriod }}<br><strong>{{ data.coursePrice }} EUR</strong></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <form action="submit_application" class="order-form" method="post">
+        <div class="container container-600">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-input"><label for="name">Meno a priezvisko</label><input name="name" id="name" type="text"
+                                                                                   placeholder="Ako sa voláš?">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-input"><label for="email">Tvoj e-mail</label><input name="email" id="email" type="email" placeholder="@">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-input"><label for="phone">Telefonický kontakt</label><input id="phone" name="phone" type="text"
+                                                                                     placeholder="+421 *** *** ***">
+                    </div>
+                    <input type="hidden" name="course_name" value="{{ data.courseName }}">
+                </div>
+            </div>
+            <div class="checkbox" id="check-1"><i class="checked"></i><label>Suhlasim s obchodnymi podmienkami
+                    <div class="error"></div>
+                </label></div>
+            <div class="checkbox" id="check-2"><i class="checked"></i><label>Suhlasim s ochranou osobnych udajov</label>
+            </div>
+            <input type="submit" id="submit" class="button" value="Nezáväzne prihlásiť"></div>
+    </form>
+</div>
+
+{% endblock %}

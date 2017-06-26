@@ -1,0 +1,624 @@
+<?php
+
+namespace Goodjob\AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Course
+ *
+ * @ORM\Table(name="course")
+ * @ORM\Entity(repositoryClass="Goodjob\AppBundle\Repository\CourseRepository")
+ */
+class Course
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code_name", type="string", length=255, unique=true)
+     */
+    private $codeName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="course_name", type="string", length=255)
+     */
+    private $courseName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="course_type", type="string", length=255, nullable=true)
+     */
+    private $courseType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="video_link", type="string", length=255, nullable=true)
+     */
+    private $videoLink;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="basic_info", type="text", nullable=true)
+     */
+    private $basicInfo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="short_description", type="text", nullable=true)
+     */
+    private $shortDescription;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="lector_id", type="integer")
+     */
+    private $lectorId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="what_you_learn", type="text", nullable=true)
+     */
+    private $whatYouLearn;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="course_start", type="date", nullable=true)
+     */
+    private $courseStart;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="course_end", type="date", nullable=true)
+     */
+    private $courseEnd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="course_day", type="string", length=255, nullable=true)
+     */
+    private $courseDay;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="course_time", type="string", length=255, nullable=true)
+     */
+    private $courseTime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="course_period", type="string", length=255, nullable=true)
+     */
+    private $coursePeriod;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="course_price", type="float", nullable=true)
+     */
+    private $coursePrice;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="application_desc", type="text", nullable=true)
+     */
+    private $applicationDesc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="course_outline", type="text", nullable=true)
+     */
+    private $courseOutline;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="requirements", type="text", nullable=true)
+     */
+    private $requirements;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=50, nullable=true)
+     */
+    private $category;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set codeName
+     *
+     * @param string $codeName
+     *
+     * @return Course
+     */
+    public function setCodeName($codeName)
+    {
+        $this->codeName = $codeName;
+
+        return $this;
+    }
+
+    /**
+     * Get codeName
+     *
+     * @return string
+     */
+    public function getCodeName()
+    {
+        return $this->codeName;
+    }
+
+    /**
+     * Set courseName
+     *
+     * @param string $courseName
+     *
+     * @return Course
+     */
+    public function setCourseName($courseName)
+    {
+        $this->courseName = $courseName;
+
+        return $this;
+    }
+
+    /**
+     * Get courseName
+     *
+     * @return string
+     */
+    public function getCourseName()
+    {
+        return $this->courseName;
+    }
+
+    /**
+     * Set courseType
+     *
+     * @param string $courseType
+     *
+     * @return Course
+     */
+    public function setCourseType($courseType)
+    {
+        $this->courseType = $courseType;
+
+        return $this;
+    }
+
+    /**
+     * Get courseType
+     *
+     * @return string
+     */
+    public function getCourseType()
+    {
+        return $this->courseType;
+    }
+
+    /**
+     * Set videoLink
+     *
+     * @param string $videoLink
+     *
+     * @return Course
+     */
+    public function setVideoLink($videoLink)
+    {
+        $this->videoLink = $videoLink;
+
+        return $this;
+    }
+
+    /**
+     * Get videoLink
+     *
+     * @return string
+     */
+    public function getVideoLink()
+    {
+        return $this->videoLink;
+    }
+
+    /**
+     * Set basicInfo
+     *
+     * @param string $basicInfo
+     *
+     * @return Course
+     */
+    public function setBasicInfo($basicInfo)
+    {
+        $this->basicInfo = $basicInfo;
+
+        return $this;
+    }
+
+    /**
+     * Get basicInfo
+     *
+     * @return string
+     */
+    public function getBasicInfo()
+    {
+        return $this->basicInfo;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Course
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set lectorId
+     *
+     * @param integer $lectorId
+     *
+     * @return Course
+     */
+    public function setLectorId($lectorId)
+    {
+        $this->lectorId = $lectorId;
+
+        return $this;
+    }
+
+    /**
+     * Get lectorId
+     *
+     * @return int
+     */
+    public function getLectorId()
+    {
+        return $this->lectorId;
+    }
+
+    /**
+     * Set whatYouLearn
+     *
+     * @param string $whatYouLearn
+     *
+     * @return Course
+     */
+    public function setWhatYouLearn($whatYouLearn)
+    {
+        $this->whatYouLearn = $whatYouLearn;
+
+        return $this;
+    }
+
+    /**
+     * Get whatYouLearn
+     *
+     * @return string
+     */
+    public function getWhatYouLearn()
+    {
+        return $this->whatYouLearn;
+    }
+
+    /**
+     * Set courseStart
+     *
+     * @param \DateTime $courseStart
+     *
+     * @return Course
+     */
+    public function setCourseStart($courseStart)
+    {
+        $this->courseStart = $courseStart;
+
+        return $this;
+    }
+
+    /**
+     * Get courseStart
+     *
+     * @return \DateTime
+     */
+    public function getCourseStart()
+    {
+        return $this->courseStart;
+    }
+
+    /**
+     * Set courseEnd
+     *
+     * @param \DateTime $courseEnd
+     *
+     * @return Course
+     */
+    public function setcourseEnd($courseEnd)
+    {
+        $this->courseEnd = $courseEnd;
+
+        return $this;
+    }
+
+    /**
+     * Get courseEnd
+     *
+     * @return \DateTime
+     */
+    public function getcourseEnd()
+    {
+        return $this->courseEnd;
+    }
+
+    /**
+     * Set courseDay
+     *
+     * @param string $courseDay
+     *
+     * @return Course
+     */
+    public function setCourseDay($courseDay)
+    {
+        $this->courseDay = $courseDay;
+
+        return $this;
+    }
+
+    /**
+     * Get courseDay
+     *
+     * @return string
+     */
+    public function getCourseDay()
+    {
+        return $this->courseDay;
+    }
+
+    /**
+     * Set courseTime
+     *
+     * @param string $courseTime
+     *
+     * @return Course
+     */
+    public function setCourseTime($courseTime)
+    {
+        $this->courseTime = $courseTime;
+
+        return $this;
+    }
+
+    /**
+     * Get courseTime
+     *
+     * @return string
+     */
+    public function getCourseTime()
+    {
+        return $this->courseTime;
+    }
+
+    /**
+     * Set coursePeriod
+     *
+     * @param string $coursePeriod
+     *
+     * @return Course
+     */
+    public function setCoursePeriod($coursePeriod)
+    {
+        $this->coursePeriod = $coursePeriod;
+
+        return $this;
+    }
+
+    /**
+     * Get coursePeriod
+     *
+     * @return string
+     */
+    public function getCoursePeriod()
+    {
+        return $this->coursePeriod;
+    }
+
+    /**
+     * Set coursePrice
+     *
+     * @param float $coursePrice
+     *
+     * @return Course
+     */
+    public function setCoursePrice($coursePrice)
+    {
+        $this->coursePrice = $coursePrice;
+
+        return $this;
+    }
+
+    /**
+     * Get coursePrice
+     *
+     * @return float
+     */
+    public function getCoursePrice()
+    {
+        return $this->coursePrice;
+    }
+
+    /**
+     * Set applicationDesc
+     *
+     * @param string $applicationDesc
+     *
+     * @return Course
+     */
+    public function setApplicationDesc($applicationDesc)
+    {
+        $this->applicationDesc = $applicationDesc;
+
+        return $this;
+    }
+
+    /**
+     * Get applicationDesc
+     *
+     * @return string
+     */
+    public function getApplicationDesc()
+    {
+        return $this->applicationDesc;
+    }
+
+
+    /**
+     * Set courseOutline
+     *
+     * @param string $courseOutline
+     *
+     * @return Course
+     */
+    public function setCourseOutline($courseOutline)
+    {
+        $this->courseOutline = $courseOutline;
+
+        return $this;
+    }
+
+    /**
+     * Get courseOutline
+     *
+     * @return string
+     */
+    public function getCourseOutline()
+    {
+        return $this->courseOutline;
+    }
+
+    /**
+     * Set requirements
+     *
+     * @param string $requirements
+     *
+     * @return Course
+     */
+    public function setRequirements($requirements)
+    {
+        $this->requirements = $requirements;
+
+        return $this;
+    }
+
+    /**
+     * Get requirements
+     *
+     * @return string
+     */
+    public function getRequirements()
+    {
+        return $this->requirements;
+    }
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     *
+     * @return Course
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set shortDescription
+     *
+     * @param string $shortDescription
+     *
+     * @return Course
+     */
+    public function setShortDescription($shortDescription)
+    {
+        $this->shortDescription = $shortDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get short description
+     *
+     * @return string
+     */
+    public function getShortDescription()
+    {
+        return $this->shortDescription;
+    }
+}

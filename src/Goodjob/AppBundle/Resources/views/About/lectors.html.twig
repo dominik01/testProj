@@ -1,0 +1,31 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+<section class="bannersmall"><h1>Naši <strong>lektori</strong></h1></section>
+<section class="lectors">
+    {%  for lector in lectors %}
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-3">
+                        <div class="portrait"><img src="{{ asset(lector.photo)}}"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-9">
+                        <div class="bio"><h3>{{ lector.name }}</h3><h4>{{ lector.position }}</h4>
+                            <p>{{ lector.description }}</p>
+                            <h3>Kurzy:</h3>
+                            <ul>
+                                {%  for course in lector.courses %}
+                                    <li><a href="{{ path('goodjob_course', {'id': course.codeName}) }}">{{ course.courseName }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </article>
+    {% endfor %}
+
+
+</section>
+<script src="{{ asset('bundles/goodjob/scripts/main.js') }}"></script>
+{% endblock %}

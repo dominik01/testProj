@@ -1,0 +1,32 @@
+user_homepage:
+    pattern: /
+    defaults: {_controller: WebronUserBundle:User:login }
+webron_user_list:
+    path:     /user/list
+    defaults: { _controller: WebronUserBundle:User:list }
+webron_get_user:
+    path:     /user/get/{id}
+    defaults: { _controller: WebronUserBundle:User:get }
+webron_create_user:
+    path:     /user/create
+    defaults: { _controller: WebronUserBundle:User:create }
+webron_save_user:
+    path:     /user/save/{id}
+    defaults: { _controller: WebronUserBundle:User:save }
+    
+user_register:
+    pattern: /user/register/
+    defaults: {_controller: WebronUserBundle:User:register }
+user_change_password:
+    pattern: /user/change-password/
+    defaults: {_controller: WebronUserBundle:User:changePassword }
+user_login:
+    pattern: /login/
+    defaults: {_controller: WebronUserBundle:User:login }
+user_post_login:
+    pattern: /user/post-login/
+    defaults: {_controller: WebronUserBundle:User:postLogin }
+user_login_check:
+    pattern: /user/login-check/
+user_logout:
+    pattern: /user/logout/

@@ -1,0 +1,200 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+    <section class="bannersmall"><h1>{{ data.courseType }}<strong>{{data.courseName }}</strong></h1></section>
+    <section class="courseinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="intro"><h2>Kurzy, ktoré ťa zamestnajú</h2><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}"
+                                                                                   alt="loc"></i><h4>Bratislava - Staré
+                            mesto</h4>
+                        <p>{{ data.basicInfo }}</p></div>
+                    <div class="row info">
+                        <div class="col-md-4"><i><img src="{{ asset('bundles/goodjob/images/icon_clock.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Trvanie kurzu</h5>
+                                <div>Začiatok: <strong>{{ data.courseStart | date('d.m.Y') }}</strong></div>
+                                <div>Ukončenie: {{ data.courseEnd | date('d.m.Y')}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4"><i><img src="{{ asset('bundles/goodjob/images/icon_calendar.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Konanie kurzu</h5>
+                                <div>{{ data.courseDay }}</div>
+                                <div><strong>{{ data.courseTime }}</strong></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4"><i><img src="{{ asset('bundles/goodjob/images/icon_euro.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Cena kurzu</h5>
+                                <div>Za {{ data.coursePeriod }}</div>
+                                <div><strong>{{ data.coursePrice }} EUR</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if data.videoLink != '' %}
+                    <div class="row video">
+                        <div class="col-md-12">
+                            <div class="main">
+                                <iframe width="100%" height="100%" src="{{ data.videoLink }}"
+                                        frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <h3>Popis kurzu</h3>
+                    {{ data.description|raw}}
+
+                    {% if data.requirements is defined and data.requirements != '' %}
+                        <h3>Predpoklady:</h3>
+                        {{ data.requirements | raw }}
+                    {% endif %}
+
+                    {% if data.whatYouLearn is defined and data.whatYouLearn != ''  %}
+                        <h3>Na kurze sa naučíš</h3>
+                        {{ data.whatYouLearn | raw}}
+                    {% endif %}
+
+                    {% if data.courseOutline is defined and data.courseOutline != '' %}
+                        <h3>Osnova kurzu</h3>
+                        {{ data.courseOutline | raw }}
+                    {% endif %}
+
+                    <div class="lecturer">
+                        <div class="row">
+                            <div class="col-md-12">
+                                {% if courseLector.photo is defined %}
+                                <div class="clearfix"><img src="{{ asset(courseLector.photo)}}" alt="dzedo">
+                                    <h3>{{ courseLector.name }}</h3>
+                                    <p>{{ courseLector.description }}</p></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="address"><h3>Miesto konania</h3>
+                                    <div>Satori stage</div>
+                                    <div>Mickiewiczova 2246/9</div>
+                                    <div>Bratislava, 811 07</div>
+                                </div>
+                                <div class="contact">
+                                    <div>+421908481523</div>
+                                    <div>michal.chylik@goodjob.sk</div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="map-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <div class="row">
+                            <div class="col-md-4"><i><img src="{{ asset('bundles/goodjob/images/ico2_mozog.svg')}}" alt="Kiwi standing on oval"></i>
+                                <h3>Praktický tréning</h3>
+                                <p>Ovládať teóriu novej technológie je potrebné, ale ešte dôležitejšie je, naučiť sa ju
+                                    prakticky používať. Naše kurzy sú orientované práve na prax, preto obsahujú množstvo
+                                    úloh, zadaní a reálnych príkladov.</p></div>
+                            <div class="col-md-4"><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}" alt="Kiwi standing on oval"></i>
+                                <h3>L/EARN program</h3>
+                                <p>Learn and earn, čiže uč sa a zarábaj. Náš program L/EARN ponúka najlepším absolventom, v
+                                    spolupráci s partnerskými spoločnosťami, možnosť aplikovania nadobudnutých znalostí v
+                                    praxi.</p></div>
+                            <div class="col-md-4"><i><img src="{{ asset('bundles/goodjob/images/ico4_cashback.svg')}}" alt="Kiwi standing on oval"></i>
+                                <h3>Vyskúšaj zadarmo</h3>
+                                <p>Nikto nekupuje rád mačku vo vreci. Chceš sa niečo nové naučiť, ale nie si si istý, či je
+                                    náš kurz to, čo hľadáš? Vyskúšaj si prvú hodinu zadarmo. V prípade nespokojnosti ti
+                                    vrátime plnú cenu kurzu späť.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 signUpSide">
+                    <div class="hidden-xs hidden-sm" id="signUpSide">
+                        <div><h3>Prihlás sa kým je miesto:</h3>
+                            <ul>
+
+                                    {{ data.applicationDesc|raw }}
+
+                                <li>ak sa ti po prvej hodine kurz nezapáčí, <strong>garantujeme vrátenie plnej ceny
+                                        kurzu</strong></li>
+                            </ul>
+                            <div><a class="button" href="{{ path('goodjob_course_application', {'id': data.codeName}) }}">Nezáväzne prihlásiť</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="signup">
+        <a class="button" href="{{ path('goodjob_course_application', {'id': data.codeName}) }}">Prihlásiť sa na kurz</a>
+    </section>
+    <section class="courses">
+        <div class="container"><h2>Aktuálne kurzy a workshopy</h2>
+            <div class="row">
+                {% for course in courses %}
+                <div class="col-xs-12 col-sm-6 col-md-3"><a class="wrap" href="{{ path('goodjob_course', {'id': course.codeName}) }}"><i><img src="{{ asset('bundles/goodjob/images/category'~course.category~'.jpg') }}" alt="course_1"></i>
+                        <div><h3>{{ course.courseName }}</h3>
+                            <p>Bacon ipsum dolor amet frankfurter tri-tip andouille meatloaf, leberkas meatball salami bresaola
+                                capicola ball tip filet mignon jerky short ribs porchetta.</p></div>
+                    </a></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body"><h3>Nezavazna prihlaska na</h3>
+                    <h2>Kurz Adouubiii Fotosop</h2>
+                    <p>Bacon ipsum dolor amet frankfurter tri-tip andouille meatloaf, leberkas meatball salami bresaola
+                        capicola ball tip filet mignon jerky short ribs porchetta.</p>
+                    <div class="content clearfix">
+                        <div><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Trvanie kurzu</h5>
+                                <div>Začiatok: <strong>4.6.2016</strong></div>
+                                <div>Ukončenie: 4.7.2016</div>
+                            </div>
+                        </div>
+                        <div><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Konanie kurzu</h5>
+                                <div>Pondelky a stredy</div>
+                                <div><strong>18:00 - 21:00</strong></div>
+                            </div>
+                        </div>
+                        <div><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Cena kurzu</h5>
+                                <div>Za 6 týždňov</div>
+                                <div><strong>279 EUR</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="signupFrom">
+                        <div class="form-group"><label for="name">Meno a priezvisko</label><input type="text"
+                                                                                                  class="form-control"
+                                                                                                  id="name"
+                                                                                                  placeholder="Ako sa volas?">
+                        </div>
+                        <div class="form-group"><label for="email">Tvoj email</label><input type="email"
+                                                                                            class="form-control" id="email"
+                                                                                            placeholder="@"></div>
+                        <div class="form-group"><label for="tel">Telefonicly kontakt</label><input type="text"
+                                                                                                   class="form-control"
+                                                                                                   id="tel"
+                                                                                                   placeholder="+421 *** *** ***">
+                        </div>
+                        <div class="checkbox"><label><i><img src="{{ asset('bundles/goodjob/images/checked.png')}}" alt="checkbox"></i>
+                                <div>Suhlasim so zneuzitim vsetkeho kokot pica u holica spinava rit a chlpata mindza</div>
+                            </label></div>
+                        <div class="checkbox"><label><i><img src="{{ asset('bundles/goodjob/images/checked.png')}}" alt="checkbox"></i>
+                                <div>Jebal penis do rici arnostovej</div>
+                            </label></div>
+                        <div class="button">Bud za kokota na fejkbuku</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

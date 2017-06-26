@@ -1,0 +1,17 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+
+<div id="thankyou">
+    <section class="bannersmall"><h1><strong>{{ data.course_name }}</strong></h1></section>
+    <section class="order-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12"><h2><span>Gratulujeme! Práve si sa prihlásil na</span>{{ data.course_name }}</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12"><p>A zároveň ďakujeme za prejavenú dôveru. Budeme ťa kontaktovať počas nasledujúcich 48 hodín.</p></div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

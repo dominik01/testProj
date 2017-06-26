@@ -1,0 +1,3 @@
+webron_translation_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: WebronTranslationBundle:Default:index }

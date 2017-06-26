@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" assets-root="{{ asset('bundles/goodjob/') }}">
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Goodjob</title>
+        <link href="{{ asset('bundles/goodjob/css/main.css') }}" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ asset('bundles/goodjob/images/logo/goodjob_logo_16.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('bundles/goodjob/images/logo/goodjob_logo_144.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('bundles/goodjob/images/logo/goodjob_logo_114.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('bundles/goodjob/images/logo/goodjob_logo_72.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('bundles/goodjob/images/logo/goodjob_logo_57.png') }}">
+        <!-- Place favicon.ico in the root directory -->
+        <script src="{{ asset('bundles/goodjob/scripts/vendor/modernizr.js') }}"></script>
+        <script src="{{ asset('bundles/goodjob/scripts/vendor.js') }}"></script>
+        <script src="{{ asset('bundles/goodjob/scripts/plugins.js') }}"></script>
+    {% endblock %}
+</head>
+<body>
+{% block nav %}
+    <!--[if lt IE 10]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+            href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="col-xs-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><span
+                                class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                class="icon-bar"></span> <span
+                                class="info-text">menu</span></button>
+                    <a class="navbar-brand" href="{{ path('goodjob_landing') }}">
+                        <div><img src="{{ asset('bundles/goodjob/images/logo.svg') }}" alt="logo">
+                            <div class="hidden-xs hidden-sm">Kurzy, ktoré ťa zamestnajú</div>
+                        </div>
+                    </a></div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ path('goodjob_landing') }}#courses">Kurzy</a></li>
+                        <li class="hidden-xs max-80"><span>|</span></li>
+                        <li><a href="{{ path('goodjob_lectors') }}">Lektori</a></li>
+                       <!-- <li class="hidden-xs max-80"><span>|</span></li>
+                        <li><a href="kariera/">Kariéra</a></li>-->
+                        <li class="hidden-xs max-80"><span>|</span></li>
+                        <li><a href="{{ path('goodjob_blog') }}">Blog</a></li>
+                        <li class="hidden-xs max-80"><span>|</span></li>
+                        <li><a href="{{ path('goodjob_about_us') }}">O nás</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+{% block footer %}
+    <section class="contact" id="contact">
+        <div class="container"><i><img src="{{ asset('bundles/goodjob/images/logo.svg') }}" alt="logo"></i>
+            <div class="wrap"><p>Prihlás sa na odber nášho newslettera a dostávaj informácie o nových kurzoch,
+                    workshopoch
+                    a pracovných príležitostiach priamo na e-mail.</p></div>
+            <div class="subscription">
+                <form method="post" action="{{ path('goodjob_subscribe') }}"><input type="text"
+                                                                                    placeholder="tvoj@email.sk"
+                                                                                    name="email"><input type="submit"
+                                                                                                        class="btn btn-primary btn-form"
+                                                                                                        value="Prihlásiť sa na odber">
+                </form>
+            </div>
+            <div class="wrap"><i>Relevantné novinky najviac 2x mesačne. Žiadny spam. Sľubujeme.</i></div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 icons col-sm-3"><a href="https://www.facebook.com/goodjobsk/" target="_blank"><img
+                                src="{{ asset('bundles/goodjob/images/soc_facebook.svg') }}"></a><a
+                            href="https://twitter.com/goodjobsk"
+                            target="_blank"><img
+                                src="{{ asset('bundles/goodjob/images/soc_twitter.svg') }}"></a><a
+                            href="https://plus.google.com/110517362032116815635"
+                            target="_blank"><img
+                                src="{{ asset('bundles/goodjob/images/soc_googleplus.svg') }}"></a><a
+                            href="https://www.youtube.com/channel/UCxL4SLCrJchCOF_tkHVLVMQ" target="_blank"><img
+                                src="{{ asset('bundles/goodjob/images/soc_youtube.svg') }}"></a><a
+                            href="https://www.linkedin.com/company/10649156"
+                            target="_blank"><img src="{{ asset('bundles/goodjob/images/soc_linkedin.svg') }}"></a>
+                </div>
+                <div class="col-xs-12 col-sm-7 col-sm-offset-2 links"><a href="{{ path('goodjob_landing') }}#courses">Kurzy</a> <span>|</span> <a
+                            href="{{ path('goodjob_lectors') }}">Lektori</a> <span>|</span>
+                            <!--<a href="kariera/">Kariéra</a> <span>|</span>-->
+                            <a href="{{ path('goodjob_blog') }}">Blog</a> <span>|</span>
+                            <a href="{{ path('goodjob_about_us') }}">O nás</a></div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+    (function(d) {
+        var config = {
+            kitId: 'bsw1yab',
+            scriptTimeout: 3000,
+            async: true
+        },
+        h=d.documentElement,
+        t=setTimeout(function(){
+            h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";
+        },config.scriptTimeout),
+        tk=d.createElement("script"),
+        f=false,
+        s=d.getElementsByTagName("script")[0],
+        a;
+        h.className+=" wf-loading";
+        tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+    </script>
+    <script src="https://use.typekit.net/bsw1yab.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBkypr9PzKiUoZKLUF29glEu0zzGK-gE_0&callback=initMap"></script>
+    <script>var myLatlng = new google.maps.LatLng(48.150065, 17.115720);
+        var mapDiv = document.getElementById('map-canvas');
+        var map = new google.maps.Map(mapDiv, {
+            center: myLatlng,
+            zoom: 16
+        });
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title: "Satori stage"
+        });
+        marker.setMap(map);</script>
+    <script type="text/javascript">
+    (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
+    'https://goodjob.ladesk.com/scripts/track.js',
+    function(e){ LiveAgent.createButton('668f60dc', e); });
+    </script>
+{% endblock %}
+</body>
+</html>

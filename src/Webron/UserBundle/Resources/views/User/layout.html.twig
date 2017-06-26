@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>MyMcd.eu</title>
+
+    <link rel="stylesheet" href="{{asset('bundles/eps/vendor/css/eps.app.css')}}">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="shortcut icon" href="{{asset('bundles/eps/vendor/images/icons/fav/favicon.ico')}}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon.png')}}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon-57x57.png')}}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon-72x72.png')}}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon-76x76.png')}}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon-114x114.png')}}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon-120x120.png')}}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon-144x144.png')}}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon-152x152.png')}}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('bundles/eps/vendor/images/icons/fav/apple-touch-icon-180x180.png')}}" />
+
+    <!-- ng base -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <style>
+
+					.error {
+						color: #FF0000;
+						font-weight: bold;
+					}
+
+					.login-form {
+            width: 360px;
+            display: block;
+            padding: 40px;
+            background: #ccc;
+            font-size: 14px;
+            height: 280px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -180px;
+            margin-top: -140px;
+            border: 1px solid #CCC;
+            border-radius: 20px;
+            background-color: #FFF;
+            opacity: 0.6;
+            box-shadow: 3px 3px 20px #666;
+          }
+          .login-form .r-group {
+            margin-top: 40px;
+          }
+
+          .login-form input {
+            display: block;
+            padding: 4px 7px;
+
+            box-sizing: border-box;
+            height: 38px;
+          }
+
+          .login-form .r-group input {
+
+            border-width: medium medium 1px;
+            border-style: none none solid;
+            border-color: -moz-use-text-color -moz-use-text-color #808080;
+            -moz-border-top-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            border-image: none;
+            width: 100%;
+            line-height: 25px;
+            font-size: 20px;
+            margin-top: 3px;
+          }
+
+          .login-form .l-group input {
+            display: inline-block;
+          }
+
+          .login-form .l-group input[type=submit] {
+            border: medium none;
+            border-radius: 20px;
+            background-color: #004612;
+            color: #FFF;
+            width: 100px;
+            line-height: 25px;
+            font-size: 15px;
+            font-weight: lighter;
+            margin: 0;
+            padding: 0;
+            height: 27px;
+            float: right;
+            margin-top: 24px;
+          }
+
+          .login-form .l-group input[type="checkbox"] {
+            margin-top: 17px;
+            float: left;
+          }
+
+          .login-form .l-group label {
+            padding-top: 27px;
+            margin-left: 5px;
+          }
+
+          .login-form img.login-logo {
+            display: block; max-width: 100%; height: auto; margin: 0 auto 30px auto; }
+    </style>
+
+  </head>
+
+  <body style="height: auto">
+
+    <div id="header" ui-view="header">
+
+      <nav class="navbar navbar-static-top" role="navigation">
+
+        <div class='line' style="height: 28px"></div>
+
+        <div class="navbar-header">
+          <a class="logo navbar-brand" href="#"></a>
+        </div>
+
+      </nav>
+
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="login-footer">
+				<ul>
+					<li class="f1"><a href="http://www.mcdonalds.sk" title="McDonald´s" target="_blank">McDonald's</a></li>
+					<li class="f4"><a href="mailto:support@eps.sk" title="Support" target="_blank">IT Support</a></li>
+				</ul>
+		</footer>
+
+
+  </body>
+
+</html>

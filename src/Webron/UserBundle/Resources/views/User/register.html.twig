@@ -1,0 +1,22 @@
+  {% extends 'WebronUserBundle:User:layout.html.twig' %}
+  {% block content %}
+<h2 style="text-align:center">Register new user</h2>
+<form action="{{ path('user_register') }}" method="post" {{ form_enctype(form) }} class="login-form">
+<div class="r-group">
+	<div>
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email, {'attr': {'placeholder': 'E-mail'} }) }}
+    </div>
+    <div>
+        {{ form_errors(form.password) }}
+        {{ form_widget(form.password, {'attr': {'placeholder': 'Password'} }) }}
+    </div>
+    <div>
+        {{ form_errors(form.name) }}
+        {{ form_widget(form.name, {'attr': {'placeholder': 'Name'} }) }}
+    </div>
+    {{ form_rest(form) }}
+</div>
+    <input type="submit" value="Register"/>
+</form>
+  {% endblock %}

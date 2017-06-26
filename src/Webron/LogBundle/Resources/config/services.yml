@@ -1,0 +1,7 @@
+parameters:
+#    webron_log.example.class: Webron\LogBundle\Example
+
+services:
+#    webron_log.example:
+#        class: %webron_log.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

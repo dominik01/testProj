@@ -1,0 +1,30 @@
+goodjob_landing:
+    path:     /
+    defaults: { _controller: GoodjobAppBundle:Default:index }
+goodjob_course:
+    path:     /kurz/{id}
+    defaults: { _controller: GoodjobAppBundle:Courses:course }
+goodjob_courses:
+    path:     /kurzy
+    defaults: { _controller: GoodjobAppBundle:Courses:allCourses }
+goodjob_blog:
+    path:     /blog
+    defaults: { _controller: GoodjobAppBundle:Default:showBlog }
+goodjob_blog_article:
+    path:     /blog/{id}
+    defaults: { _controller: GoodjobAppBundle:Default:showArticle}
+goodjob_course_application:
+    path:     /kurz/{id}/application
+    defaults: { _controller: GoodjobAppBundle:Courses:apply }
+goodjob_course_application_submit:
+    path:     /kurz/{id}/submit_application
+    defaults: { _controller: GoodjobAppBundle:Default:submitApplication }
+goodjob_about_us:
+    path:     /about
+    defaults: { _controller: GoodjobAppBundle:Default:about }
+goodjob_lectors:
+    path:     /lectors
+    defaults: { _controller: GoodjobAppBundle:Lectors:lectors }
+goodjob_subscribe:
+    path:     /subscribe
+    defaults: { _controller: GoodjobAppBundle:Default:subscribe }

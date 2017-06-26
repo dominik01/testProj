@@ -1,0 +1,31 @@
+  {% extends 'WebronUserBundle:User:layout.html.twig' %}
+  {% block content %}
+  <div class="projects" ui-view="list">
+    
+   
+    
+    <form action="{{ path('user_login_check') }}" method="post" class="login-form">
+	  <div class="r-group">
+        <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder='Enter email' required />
+        <input type="password" id="password" name="_password" placeholder='Enter password' required />
+    </div>
+    <div class="l-group"> 
+      <!--<input type="checkbox" checked>
+      <label for="">Neodhlasovať ma</label>-->
+      <input type="submit" class='btn' value="Prihlásiť">
+    </div>
+			
+			
+		{% if error %}
+				<span class="error"><br>* {{ error.message|trans({}, 'messages') }}</span>
+		{% endif %}
+
+    </form>
+		
+		
+    
+  </div>
+  <div class="item" ui-view="item">
+    
+  </div>
+  {% endblock %}

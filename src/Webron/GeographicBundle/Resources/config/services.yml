@@ -1,0 +1,7 @@
+parameters:
+#    webron_geographic.example.class: Webron\GeographicBundle\Example
+
+services:
+#    webron_geographic.example:
+#        class: %webron_geographic.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

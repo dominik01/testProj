@@ -1,0 +1,8 @@
+webron_pdf_homepage:
+    path:     /helloName/{name}
+    defaults: { _controller: WebronPdfBundle:Default:index }
+
+webron_pdf_testpage:
+    path:       /webronPdfTestPage
+    defaults:   {_controller: WebronPdfBundle:Main:test }
+

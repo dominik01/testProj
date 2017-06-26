@@ -1,0 +1,3 @@
+webron_geographic_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: WebronGeographicBundle:Default:index }

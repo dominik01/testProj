@@ -1,0 +1,119 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+<section class="hero">
+    <div id="heroSlider" class="slick-container">
+        <article>
+            <div><h1>Nauč sa <strong>design</strong></h1>
+                <div class="cta"><a class="btn btn-primary" href="{{ path('goodjob_course', {'id': 'digital_design_basic'}) }}">Informácie o kurze</a></div>
+            </div>
+        </article>
+        <article>
+            <div><h1>Nauč sa <strong>angular</strong></h1>
+                <div class="cta"><a class="btn btn-primary" href="{{ path('goodjob_course', {'id': 'angular2-1'}) }}">Informácie o kurze</a></div>
+            </div>
+        </article>
+        <article>
+            <div><h1>Nauč sa <strong>mongo</strong></h1>
+                <div class="cta"><a class="btn btn-primary" href="{{ path('goodjob_course', {'id': 'mongo-1'}) }}">Informácie o kurze</a></div>
+            </div>
+        </article>
+    </div>
+</section>
+<section class="showcase">
+    <div class="container"><h2>Kurzy, ktoré ťa zamestnajú</h2>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3"><i><img src="{{ asset('bundles/goodjob/images/ico1_ciapka.svg') }}"
+                                                             alt="Kiwi standing on oval"></i>
+                <h3>Profesionálne kurzy</h3>
+                <div><p>Naše kurzy vyučujú ľudia s bohatými skúsenosťami z praxe. Pretože nikto ťa nenaučí novú
+                        technológiu lepšie, ako človek, ktorý ju každodenne používa vo svojej profesii.</p></div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><i><img
+                            src="{{ asset('bundles/goodjob/images/ico2_mozog.svg') }}"
+                            alt="Kiwi standing on oval"></i>
+                <h3>Praktický tréning</h3>
+                <div><p>Ovládať teóriu novej technológie je potrebné, ale ešte dôležitejšie je, naučiť sa ju prakticky
+                        používať. Naše kurzy sú orientované práve na prax, preto obsahujú množstvo úloh, zadaní a
+                        reálnych príkladov.</p></div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg') }}"
+                                                             alt="Kiwi standing on oval"></i>
+                <h3>L/EARN program</h3>
+                <div><p>Learn and earn, čiže uč sa a zarábaj. Náš program L/EARN ponúka najlepším absolventom, v
+                        spolupráci s partnerskými spoločnosťami, možnosť aplikovania nadobudnutých znalostí v praxi.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><i><img
+                            src="{{ asset('bundles/goodjob/images/ico4_cashback.svg') }}"
+                            alt="Kiwi standing on oval"></i>
+                <h3>Vyskúšaj zadarmo</h3>
+                <div><p>Nikto nekupuje rád mačku vo vreci. Chceš sa niečo nové naučiť, ale nie si si istý, či je náš
+                        kurz to, čo hľadáš? Vyskúšaj si prvú hodinu zadarmo. V prípade nespokojnosti ti vrátime plnú
+                        cenu kurzu späť.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="map-grey">
+    <section class="teachers"><h2>Len skúsení lektori</h2>
+        <div id="teacherSlider" class="slick-container">
+            {%  for lector in lectors %}
+            <article class="teacher"><i><img src="{{ asset(lector.photo) }}"></i>
+                <h3>{{ lector.name }}</h3>
+                <div><p>{{ lector.shortDesc }}</p></div>
+            </article>
+            {% endfor %}
+
+        </div>
+    </section>
+</div>
+<section class="courses" id="courses">
+    <div class="container"><h2>Aktuálne kurzy a workshopy</h2>
+        <div class="row">
+            {% for course in courses %}
+            <div class="col-xs-12 col-sm-6 col-md-3"><a class="wrap" href="{{ path('goodjob_course', {'id': course.codeName}) }}"><i>
+                        <img
+                                src="{{ asset('bundles/goodjob/images/category'~course.category~'.jpg') }}" alt="course_1"></i>
+                    <div><h3>{{ course.courseName }}</h3>
+                        <p>{% if course.shortDescription is defined %}
+                            {{ course.shortDescription }}{% endif %}</p></div>
+                </a></div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<div class="map-partners">
+    <section class="blogs">
+        <div class="container"><h2>goodjob blog</h2>
+            <div class="row">
+                {% for blog in blogs %}
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0"><a class="wrap" href="{{ path('goodjob_blog_article', {'id': blog.id}) }}"><i><img
+                                    src="{{ asset('bundles/goodjob/images/'~blog.image)}}" alt="course_1"></i>
+                        <div><span>{{ blog.datetimePublished | date('d.m.Y') }}</span>
+                            <h3>{{ blog.name }}</h3></div>
+                    </a></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="partners">
+        <div class="container"><h2>Partneri</h2>
+            <div class="row">
+                <div class="wrap">
+                    <div class="col-md-1"></div>
+                    <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://www.become.sk" target="_blank"><img src="{{ asset('bundles/goodjob/images/logo1.png')}}" alt="course_1"></a></div>
+                    <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://www.2fresh.sk" target="_blank"><img src="{{ asset('bundles/goodjob/images/logo2.png')}}" alt="course_1"></a></div>
+                    <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://www.offis.sk" target="_blank"><img src="{{ asset('bundles/goodjob/images/logo3.png')}}" alt="course_1"></a></div>
+                    <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://www.bratilicious.com" target="_blank"><img src="{{ asset('bundles/goodjob/images/logo4.png')}}" alt="course_1"></a></div>
+                    <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://www.tarantula.sk" target="_blank"><img src="{{ asset('bundles/goodjob/images/logo5.png')}}" alt="course_1"></a></div>
+                </div>
+            </div>
+            {% if subscription is defined and subscription %}
+                <div class="subscription-done">Ďakujeme, boli ste zapísaný</div>
+            {% endif %}
+        </div>
+    </section>
+</div>
+<script src="{{ asset('bundles/goodjob/scripts/main.js') }}"></script>
+{% endblock %}

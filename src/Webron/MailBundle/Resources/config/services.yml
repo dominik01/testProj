@@ -1,0 +1,7 @@
+parameters:
+#    webron_mail.example.class: Webron\MailBundle\Example
+
+services:
+#    webron_mail.example:
+#        class: %webron_mail.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

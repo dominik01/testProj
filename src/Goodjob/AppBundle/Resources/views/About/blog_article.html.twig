@@ -1,0 +1,44 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+<section class="bannersmall"><h1>Goodjob<strong>Blog</strong></h1></section>
+<section class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="row">
+                    <div class="col-xs-12"><h2>{{ blog.name }}</h2>
+                        {{ blog.text | raw }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 contactUpSide">
+                <div class="hidden-xs hidden-sm" id="contactUpSide">
+                    <div><h3>Napíš nám</h3>
+                        <ul>
+                            <li><strong>tel. +421 911 258 330 </strong></li>
+                            <li><a href="mailto:info@goodjob.sk" target="_top">info@goodjob.sk</a></li>
+                        </ul>
+                        <div>
+                            <a href="mailto:info@goodjob.sk" target="_top" class="button">Kontaktujte nás</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hidden-md hidden-lg">
+                <div class="col-xs-12 contactBottom">
+                    <div><h3>Napíš nám</h3>
+                        <ul>
+                            <li><strong>tel. 0908481523</strong></li>
+                            <li>michal.chylik@goodjob.sk</li>
+                        </ul>
+                        <div>
+                            <div class="button" data-toggle="modal" data-target="#myModal">Kontaktujte nás</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{{ asset('bundles/goodjob/scripts/main.js') }}"></script>
+{% endblock %}

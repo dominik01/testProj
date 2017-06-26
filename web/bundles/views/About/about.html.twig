@@ -1,0 +1,97 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+<section class="bannersmall"><h1>Viac <strong>o nás</strong></h1></section>
+<section class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="row">
+                    <div class="col-xs-12"><h2>Kto sme?</h2>
+                        <p>Sme nezisková organizácia Dobrá práca n.o. Dali sme si za úlohu preklenúť nesúlad medzi
+                            ponukou a dopytom po kvalifikovanej pracovnej sile. Za jedno z riešení považujeme
+                            poskytovanie IT kurzov širšej verejnosti. Prostredníctvom takejto rekvalifikácie sa môžu do
+                            sveta IT dostať noví ľudia, ktorí sú pri súčasnom nedostatku ľudí v IT, potrební. Takýto
+                            prístup zároveň rieši aj problém s nezamestnanosťou, kedže presúvame ľudí z odborov, kde je
+                            ťažšie získať prácu, do odborov, kde je práce dostatok.</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12"><h3>Naša misia</h3>
+                        <p>Rekvalifikácia a komplexná príprava budúcich zamestnancov pre moderné IT povolania s vysokou
+                            ponukou na trhu práce ako aj v iných stabilných odvetviach s dlhodobo nadpriemernou cenou
+                            práce. Nezisková organizácia poskytuje kurzy a materiály na samovzdelávanie v oblasti IT,
+                            workshopy, školenia a následne prepája absolventov so zamestnávateľmi a reálnymi projektami.
+                            Pomáha tak preklenúť nesúlad medzi ponukou a dopytom po kvalifikovanej pracovnej sile v
+                            nových, dynamicky rastúcich odvetviach Slovenskej ekonomiky.</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12"><h3>Nase zásady</h3>
+                        <ul>
+                            <li>odbornosť</li>
+                            <li>ľudský prístup</li>
+                            <li>garancia spokojnosti</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="iconic"><i><img src="{{ asset('bundles/goodjob/images/ico2_mozog.svg')}}" alt="Kiwi standing on oval"></i>
+                            <h3>Praktický tréning</h3></div>
+                        <p>Pri učení sa novej technológie je potrebné získať teroetické znalosti o nej. Z vlastných
+                            skúsenosti však vieme, že teoretická znalosť technológie tvorí len veľmi malú časť znalosti
+                            odborníka v danej oblasti. Najdôležitejšou zložkou sú skúsenosti z práce s danou
+                            technológiou. Prax nie je možné nahradiť študovaním teórie. My si to uvedomujeme, a preto
+                            sme naše kurzy vystavali tak, aby obsahovali čo najviac praktických príkladov, úloh,
+                            skutočných problémov z praxe. Pod vedením skúseného lektora tak môžete získať oveľa viac ako
+                            z klasických teoretických kurzov.</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="iconic"><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}" alt="Kiwi standing on oval"></i>
+                            <h3>L/EARN program</h3></div>
+                        <p>Learn and earn, čiže uč sa a zarábaj. Získavanie nových profesných zručností je často
+                            motivované vidinou zvýšenia svojej ceny na trhu práce. Náš program L/EARN ide ešte ďalej.
+                            Najlepším absolventom ponúka, v spolupráci s partnerskými spoločnosťami, možnosť aplikovania
+                            nadobudnutých znalostí v praxi.</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="iconic"><i><img src="{{ asset('bundles/goodjob/images/ico4_cashback.svg')}}" alt="Kiwi standing on oval"></i>
+                            <h3>Vyskúšaj zadarmo</h3></div>
+                        <p>Ak si nie si istý, či náš kurz je to, čo hľadáš, presvedč sa na vlastnej koži! Garantujeme
+                            vrátenie plnej zaplatenej sumy v prípade, že na prvej hodine zistíš, že náš kurz nie je to,
+                            čo hľadáš. A tak sa nemusíš sa obávať, že ti nebude vyhovovať školiteľ, rýchlosť hodiny,
+                            alebo zistenie, že Kurz Java s tou peknou ikonkou šálky naozaj nie je o pestovaní rôznych
+                            odrôd kávy z Indonézie. Naši lektori chcú vzdelávať ľudí, ktorí o to sami majú záujem. Za
+                            skúšku nič nedáš. Doslova.</p></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 contactUpSide">
+                <div class="hidden-xs hidden-sm" id="contactUpSide">
+                    <div><h3>Napíš nám</h3>
+                        <ul>
+                            <li><strong>tel. +421 911 258 330 </strong></li>
+                            <li><a href="mailto:info@goodjob.sk" target="_top">info@goodjob.sk</a></li>
+                        </ul>
+                        <div>
+                            <a href="mailto:info@goodjob.sk" target="_top" class="button">Kontaktujte nás</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hidden-md hidden-lg">
+                <div class="col-xs-12 contactBottom">
+                    <div><h3>Napíš nám</h3>
+                        <ul>
+                            <li><strong>tel. 0908481523</strong></li>
+                            <li>michal.chylik@goodjob.sk</li>
+                        </ul>
+                        <div>
+                            <div class="button" data-toggle="modal" data-target="#myModal">Kontaktujte nás</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

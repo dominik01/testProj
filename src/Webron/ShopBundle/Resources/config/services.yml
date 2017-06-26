@@ -1,0 +1,7 @@
+parameters:
+#    webron_shop.example.class: Webron\ShopBundle\Example
+
+services:
+#    webron_shop.example:
+#        class: %webron_shop.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

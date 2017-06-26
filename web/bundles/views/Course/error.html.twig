@@ -1,0 +1,84 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+    <section class="bannersmall"><h1>Tento kurz neexistuje<strong></strong></h1>
+    <div style="color:white"></div>
+    </section>
+
+    <section class="courseinfo">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </section>
+
+    <section class="courses">
+        <div class="container"><h2>Aktuálne kurzy a workshopy</h2>
+            <div class="row">
+                {% for course in courses %}
+                <div class="col-xs-12 col-sm-6 col-md-3"><a class="wrap" href="{{ course.codeName }}"><i><img src="{{ asset('bundles/goodjob/images/category'~course.category~'.jpg') }}" alt="course_1"></i>
+                        <div><h3>{{ course.courseName }}</h3>
+                            <p>Bacon ipsum dolor amet frankfurter tri-tip andouille meatloaf, leberkas meatball salami bresaola
+                                capicola ball tip filet mignon jerky short ribs porchetta.</p></div>
+                    </a></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body"><h3>Nezavazna prihlaska na</h3>
+                    <h2>Kurz Adouubiii Fotosop</h2>
+                    <p>Bacon ipsum dolor amet frankfurter tri-tip andouille meatloaf, leberkas meatball salami bresaola
+                        capicola ball tip filet mignon jerky short ribs porchetta.</p>
+                    <div class="content clearfix">
+                        <div><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Trvanie kurzu</h5>
+                                <div>Začiatok: <strong>4.6.2016</strong></div>
+                                <div>Ukončenie: 4.7.2016</div>
+                            </div>
+                        </div>
+                        <div><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Konanie kurzu</h5>
+                                <div>Pondelky a stredy</div>
+                                <div><strong>18:00 - 21:00</strong></div>
+                            </div>
+                        </div>
+                        <div><i><img src="{{ asset('bundles/goodjob/images/ico3_money.svg')}}" alt="loc"></i>
+                            <div class="cnt"><h5>Cena kurzu</h5>
+                                <div>Za 6 týždňov</div>
+                                <div><strong>279 EUR</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="signupFrom">
+                        <div class="form-group"><label for="name">Meno a priezvisko</label><input type="text"
+                                                                                                  class="form-control"
+                                                                                                  id="name"
+                                                                                                  placeholder="Ako sa volas?">
+                        </div>
+                        <div class="form-group"><label for="email">Tvoj email</label><input type="email"
+                                                                                            class="form-control" id="email"
+                                                                                            placeholder="@"></div>
+                        <div class="form-group"><label for="tel">Telefonicly kontakt</label><input type="text"
+                                                                                                   class="form-control"
+                                                                                                   id="tel"
+                                                                                                   placeholder="+421 *** *** ***">
+                        </div>
+                        <div class="checkbox"><label><i><img src="{{ asset('bundles/goodjob/images/checked.png')}}" alt="checkbox"></i>
+                                <div>Suhlasim so zneuzitim vsetkeho kokot pica u holica spinava rit a chlpata mindza</div>
+                            </label></div>
+                        <div class="checkbox"><label><i><img src="{{ asset('bundles/goodjob/images/checked.png')}}" alt="checkbox"></i>
+                                <div>Jebal penis do rici arnostovej</div>
+                            </label></div>
+                        <div class="button">Bud za kokota na fejkbuku</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

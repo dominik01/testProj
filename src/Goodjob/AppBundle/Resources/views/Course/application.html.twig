@@ -1,0 +1,60 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+
+<div id="courseForm">
+    <section class="bannersmall"><h1>Novučičký kurz <strong>{{ data.courseName }}</strong></h1></section>
+    <section class="order-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12"><h2><span>Nezáväzná prihláška na</span>Kurz {{ data.courseName }}</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12"><p>Už len vyplnenie pár údajov ťa delí od možnosti rozšírenia svojich vedomostí. Vyplnením tejto nezáväznej prihlášky získame od teba základné kontaktné informácie, vďaka ktorým sa ti budeme môcť ozvať a dohodnúť bližšie detaily.</p></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="small-circle-info"><i><img src="{{ asset('bundles/goodjob/images/icon_clock.svg')}}" alt="loc"></i>
+                        <div><span>Termín kurzu</span>
+                            <p>Začiatok: <strong>{{ data.courseStart | date('d.m.Y') }}</strong><br>Ukončenie: {{ data.courseEnd | date('d.m.Y') }}</p></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="small-circle-info"><i><img src="{{ asset('bundles/goodjob/images/icon_calendar.svg')}}" alt="loc"></i>
+                        <div><span>Konanie kurzu</span>
+                            <p>{{ data.courseDay }}<br><strong>{{ data.courseTime }}</strong></p></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="small-circle-info"><i><img src="{{ asset('bundles/goodjob/images/icon_euro.svg')}}" alt="loc"></i>
+                        <div><span>Cena kurzu</span>
+                            <p>za {{ data.coursePeriod }}<br><strong>{{ data.coursePrice }} EUR</strong></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <form action="d" class="order-form" method="post">
+        <div class="container container-600">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-input"><label for="name">Meno a priezvisko</label><input name="name" id="name" type="text"
+                                                                                   placeholder="Ako sa voláš?">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-input"><label for="email">Tvoj e-mail</label><input name="email" id="email" type="text" placeholder="@">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-input"><label for="phone">Telefonický kontakt</label><input id="phone" name="phone" type="text"
+                                                                                     placeholder="+421 *** *** ***">
+                    </div>
+                    <input type="hidden" name="course_name" value="{{ data.courseName }}">
+                    <input type="hidden" name="code_name" value="{{ data.codeName }}">
+                </div>
+            </div>
+            <div class="checkbox" id="check-1"><i></i><label>Súhlasím s <a href="{{ asset('bundles/goodjob/files/VSEOBECNE_PODMIENKY_UCASTI_NA_SKOLENIACH.pdf') }}" target="_blank">obchodnými podmienkami</a>
+                    <div class="error"></div></label></div>
+            <input type="submit" id="submit" class="button" value="Nezáväzne prihlásiť"></div>
+    </form>
+</div>
+<script src="{{ asset('bundles/goodjob/scripts/main3.js') }}"></script>
+{% endblock %}

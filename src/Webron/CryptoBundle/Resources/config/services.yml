@@ -1,0 +1,19 @@
+services:
+    wsse.security.authentication.provider:
+        class: Webron\CryptoBundle\Security\Authentication\Provider\WsseProvider
+        arguments: ["", "%kernel.cache_dir%/security/nonces"]
+
+    wsse.security.authentication.listener:
+        class: Webron\CryptoBundle\Security\Firewall\WsseListener
+        arguments: ["@security.context", "@security.authentication.manager", "@logger"]
+        tags:
+              - { name: monolog.logger, channel: wsse }
+    id_store:
+            class: Webron\CryptoBundle\Store\IdStore
+            arguments:
+                - @doctrine.orm.entity_manager
+                - @lightsaml.system.time_provider
+    app.saml_user_provider:
+        class: Webron\CryptoBundle\Security\User\SamlUserProvider
+        arguments:
+                        - @doctrine.orm.entity_manager

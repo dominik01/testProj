@@ -1,0 +1,3 @@
+webron_download_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: WebronDownloadBundle:Default:index }

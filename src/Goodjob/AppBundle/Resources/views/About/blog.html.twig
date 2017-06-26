@@ -1,0 +1,28 @@
+{% extends 'GoodjobAppBundle:Landing:base.html.twig' %}
+{% block body %}
+    <section class="bannersmall"><h1>goodjob <strong>BLOG</strong></h1></section>
+    <section class="blog">
+        {% for blog in blogs %}
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="cover"><img src="{{ asset('bundles/goodjob/images/'~blog.image)}}"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="blogInfo"><h3><a href="{{ path('goodjob_blog_article', {'id': blog.id}) }}">{{ blog.name }}</a></h3><h4>{{ blog.datetimePublished | date('d.m.Y') }}</h4>
+                            <div class="social"><a><img src="{{ asset('bundles/goodjob/images/comments.jpg')}}" alt="comments"></a><a href=""><img
+                                            src="{{ asset('bundles/goodjob/images/fb.jpg')}}" alt="fb"></a><a href=""><img src="{{ asset('bundles/goodjob/images/twt.jpg')}}" alt="twitter"></a><a
+                                        href=""><img src="{{ asset('bundles/goodjob/images/lkn.jpg')}}" alt="linkedin"></a>
+                                <div class="tags"><span>vzdelavanie</span> <span>zaujimavosti</span></div>
+                            </div>
+                            <p>{{ blog.perex }}<a href="{{ path('goodjob_blog_article', {'id': blog.id}) }}">Celý
+                                    článok ></a></p></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </section>
+<script src="{{ asset('bundles/goodjob/scripts/main.js') }}"></script>
+{% endblock %}
